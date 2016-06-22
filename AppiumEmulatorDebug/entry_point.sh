@@ -24,7 +24,7 @@ do
 done
 
 # Starts Android emulator in a virtual display
-DISPLAY=$DISPLAY emulator -avd android-$AVD_VERSION &
+emulator -avd android-$AVD_VERSION -snapshot appium &
 
 # Starts fluxbox and vnc
 fluxbox -display $DISPLAY &
