@@ -1,5 +1,4 @@
 FROM rgonalo/appium:latest
-MAINTAINER Ruben Gonzalez Alonso <rgonalo@gmail.com>
 
 #==========
 # GUI Java

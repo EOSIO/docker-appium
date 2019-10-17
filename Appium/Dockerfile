@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Ruben Gonzalez Alonso <rgonalo@gmail.com>
+
 
 #===============================
 # Customize sources for apt-get
@@ -24,7 +24,7 @@ RUN apt-get update -qqy \
 #=============
 # Android SDK
 #=============
-ENV ANDROID_SDK_VERSION 24.4.1
+ENV ANDROID_SDK_VERSION 29.0.4
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 RUN cd /opt \
@@ -39,13 +39,13 @@ RUN cd /opt \
 #=====================
 # Android SDK Manager
 #=====================
-ENV ANDROID_COMPONENTS platform-tools,build-tools-25.0.3
+ENV ANDROID_COMPONENTS platform-tools,build-tools-29.0.4
 RUN echo y | android update sdk --all --force --no-ui --filter ${ANDROID_COMPONENTS}
 
 #===================
 # Nodejs and Appium
 #===================
-ENV APPIUM_VERSION 1.7.2
+ENV APPIUM_VERSION 1.5.1
 RUN  wget --no-verbose http://deb.nodesource.com/gpgkey/nodesource.gpg.key -O - | apt-key add - \
   && apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install \
